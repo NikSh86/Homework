@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-JS-4</title> 
+<style> 
+    body { 
+        background-color: rgb(83, 80, 80);
+    }
+    .range_box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #c9c9c9;
+        border-radius: 40px;
+    }
+
+    .range {
+        width: 400px;
+        height: 15px;
+        appearance: none;
+        background: #edf1f4;
+        outline: none;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .range::-webkit-slider-thumb {
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        border-radius: 50%;
+        border: 2px solid #022f52;
+        box-shadow: -407px 0 0 400px #022f52;
+        cursor: pointer;
+    }
+
+    .rangeValue {
+        position: relative;
+        text-align: center;
+        width: 60px;
+        font-size: 1.25em;
+        color: #fff;
+        background: #022f52;
+        margin-left: 15px;
+        border-radius: 25px;
+        font-weight: 500;
+    } 
+</style>  
+
+</head>
+<body> 
+    <div class="range_box">
+        <input type="range" class="range" value="0" min="0" max="100">
+        <span class="rangeValue">0</span>
+    </div> 
+      
+<script>
+    document.querySelectorAll('.range_box input').forEach(item => {
+
+        item.addEventListener('mousemove', function() {
+
+            this.closest('.range_box').querySelector('.rangeValue').innerHTML = this.value;
+        })
+
+    });
+</script>
+</body>
+</html>
