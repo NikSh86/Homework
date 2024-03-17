@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-JS</title>
+</head>
+<body> 
+    <h1>Тест</h1>
+ <form id="testForm">
+  <h3>Вопрос 1:</h3>
+  <p>Какое из следующих языков программирования является статически типизированным?</p>
+  <input type="radio" name="q1" value="a"> C++
+  <br>
+  <input type="radio" name="q1" value="b"> JavaScript
+  <br>
+
+  <h3>Вопрос 2:</h3>
+  <p>Какой тег используется для создания заголовка первого уровня?</p>
+  <input type="radio" name="q2" value="a"> h1
+  <br>
+  <input type="radio" name="q2" value="b"> h6
+  <br>
+
+  <h3>Вопрос 3:</h3>
+  <p>Что означает CSS?</p>
+  <input type="radio" name="q3" value="a"> Cascading Style Sheets
+  <br>
+  <input type="radio" name="q3" value="b"> Computer Style Sheets
+  <br>
+  <br>
+  <button type="button" onclick="showResults()">Завершить тест</button>
+ </form>
+ <br>
+ <p id="result"></p>
+
+ <script>
+  function showResults() {
+   const form = document.getElementById("testForm");
+   const answers = form.elements;
+   let correctAnswers = 0;
+
+   for (let i = 0; i < answers.length; i++) {
+    if (answers[i].checked) {
+     if (answers[i].value === "a") { // Правильный ответ со значением "a"
+      correctAnswers++;
+     }
+    }
+   }
+
+   document.getElementById("result").innerHTML = "Количество правильных ответов: " + correctAnswers;
+  }
+ </script>
+    
+</body>
+</html>
